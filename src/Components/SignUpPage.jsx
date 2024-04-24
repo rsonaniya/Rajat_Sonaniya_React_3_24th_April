@@ -20,9 +20,8 @@ export default function SignUpPage() {
   const [password, setPassword] = useState("");
 
   useEffect(() => {
-    console.log(user);
     if (user.accessToken) {
-      navigate("/profile");
+      navigate("/Rajat_Sonaniya_React_3_24th_April/profile");
     }
   }, [user, navigate]);
 
@@ -36,7 +35,7 @@ export default function SignUpPage() {
       setName("");
       setEmail("");
       setPassword("");
-      navigate("/profile");
+      navigate("/Rajat_Sonaniya_React_3_24th_April/profile");
     } else {
       alert("No field should be empty");
     }

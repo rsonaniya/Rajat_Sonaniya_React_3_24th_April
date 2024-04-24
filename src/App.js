@@ -10,17 +10,17 @@ export default function App() {
 
   useEffect(() => {
     if (user.accessToken) {
-      navigate("/profile");
+      navigate("/Rajat_Sonaniya_React_3_24th_April/profile");
     } else {
-      navigate("/signup");
+      navigate("/Rajat_Sonaniya_React_3_24th_April/signup");
     }
   }, [user, navigate]);
 
   return (
     <Routes>
-      <Route path="/" element={<h1>Homepage</h1>} />
-      <Route path="/signup" element={<SignUpPage />} />
-      <Route path="/profile" element={<ProfilePage />} />
+      <Route path="/Rajat_Sonaniya_React_3_24th_April" element={<h1>Homepage</h1>} />
+      <Route path="/Rajat_Sonaniya_React_3_24th_April/signup" element={<SignUpPage />} />
+      <Route path="/Rajat_Sonaniya_React_3_24th_April/profile" element={<ProfilePage />} />
     </Routes>
   );
 }
