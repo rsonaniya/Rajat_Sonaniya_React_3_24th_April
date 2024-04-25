@@ -1,70 +1,35 @@
-# Getting Started with Create React App
+# React-Router-Dom v6 has been used in order to work with different Routes
+Home-Route: Rajat_Sonaniya_React_3_24th_April has been used in order to deploy the application on github pages 
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Available Routes
+Homeroute/signup is used to display singup pages
+houroute/profile is used to display profile of signed up user
+In index.js, all main component <App/> has been wrapped with <BrowserRouter> in order to use Routing
 
-## Available Scripts
+## ContextAPi is used to maintain the state of user
 
-In the project directory, you can run:
+2 files, Usercontext.js and UserContextProvider.js are created in order to make use of Context API
+in the index.js, the whole application was wrapped inside   <UserContextProvider> so that all components can access global state and it's setter function 
 
-### `npm start`
+## Default navigation through routes
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+when homeroute is accessed, useEffect in App component is used to navigate on the basis of user in the state, if the user is null then it redirects to homeroute/signup page in order to enable user to signup 
+similarily, if the user state has accesstoken, then it redirects the user to show user profile page, conditional navigation is done using useNavigate hook from react-router-dom 
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### Signup page
 
-### `npm test`
+this page is reponsible for enabling user to enter details and store it into the global state, along with the user detail, it also generates 16 digit random string using generateRandomString() function as an accessToekn for the current user.
+when details are filled and submitted, the user is again redirected to profile page as the state has accessToken and user detail.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### profile page
 
-### `npm run build`
+This page is used to show user detail if the global state has the user,on click of logout button we are setting the state as null, as the state is null, the user is again redirected to signup page 
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### usage of local storage
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+We are also using local storage in order to persist the user state on manually changing the route, usage of local storage makes sure that even if the url is manually changed , the user is redirected to the correct page, ie if Global state has access token then  the user will always be on profile page even if the url is changed/page is refreshed similarly, user will always be on the singup page if the global state does not have the user, 
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Usage of BootStrap
 
-### `npm run eject`
+bootstrap has been used to style the page
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
