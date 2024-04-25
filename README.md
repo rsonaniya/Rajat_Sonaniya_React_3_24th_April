@@ -1,6 +1,10 @@
 # React-Router-Dom v6 has been used in order to work with different Routes
 Home-Route: Rajat_Sonaniya_React_3_24th_April has been used in order to deploy the application on github pages 
 
+## Deployment on GH-Pages
+
+the app has been deployed and live on the url: https://rsonaniya.github.io/Rajat_Sonaniya_React_3_24th_April
+
 ## Available Routes
 Homeroute/signup is used to display singup pages
 houroute/profile is used to display profile of signed up user
